@@ -24,5 +24,9 @@
 
 # print("Hello " + input("What is your name ") + "!")
 
-name = input("What is your name? ")
-print(len(("Hello " + name)))
+# name = input("What is your name? ")
+# print(len(("Hello " + name)))
+
+username = input("What is your name? ")
+length = len(username)
+print(length)
