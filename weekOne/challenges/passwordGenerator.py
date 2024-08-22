@@ -28,7 +28,7 @@ for num in range(1, pw_num + 1):
 for sym in range(1, pw_sym +1):
     pw_easy += random.choice(symbols)
 
-print(pw_easy)
+print(f"Easy password {pw_easy}")
 
 
 #hard
@@ -47,4 +47,4 @@ random.shuffle(pw_holder)
 print(pw_holder)
 for char in pw_holder:
     pw_hard += char
-print(pw_hard)
+print(f"Hard password {pw_hard}")
