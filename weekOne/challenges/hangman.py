@@ -14,13 +14,12 @@ print(placeholder)
 guess = input("Please guess a letter: \n").lower()
 print(guess)
 
+display = ""
+
 for letter in chosen_word:
     if letter == guess:
-        print("right")
+        display += letter
     else:
-        print("wrong")
+        display += "_"
 
-#create placeholder with same num blanks as letters in chosen word
-
-#display the puts guess letter in right spot
-
+print(display)
