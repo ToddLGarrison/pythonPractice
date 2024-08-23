@@ -8,5 +8,13 @@ print(chosen_word)
 
 
 #ask user to guess a letter, assign as variable and make lowercase
+guess = input("Please guess a letter: \n").lower()
+print(guess)
 
 #check if letter guessed is one of the letters in chosen word
+
+for letter in chosen_word:
+    if letter == guess:
+        print("right")
+    else:
+        print("wrong")
