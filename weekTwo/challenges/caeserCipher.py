@@ -6,18 +6,24 @@ shift = int(input("Type the shift number: \n"))
 
 #Create a function called to encrypt() that takes original_text and shift_amount as 2 inputs
 
-def encrypt(original_text, shift_amount):
-    cipher_text = ""
-    print(original_text)
-    print(shift_amount)
+def caesar(original_text, shift_amount):
+    output_text = ""
+    
+    if direction == 'encode':
+            for letter in original_text:
+                shifted_index = int(alphabet.index(letter) + shift_amount)
 
-    for letter in original_text:
-        shifted_index = int(alphabet.index(letter) + shift_amount)
+                shifted_index %= len(alphabet)
+                output_text += alphabet[shifted_index]
 
-        shifted_index %= len(alphabet)
-        cipher_text += alphabet[shifted_index]
-        
+            print(f"Here is your encoded results: {output_text}") 
+    else:
+            for letter in original_text:
+                shifted_index = int(alphabet.index(letter) - shift_amount)
 
-    print(f"Here is your encoded results: {cipher_text}") 
+                shifted_index = len(alphabet) % shifted_index
+                output_text += alphabet[shifted_index]
 
-encrypt(text, shift)
+            print(f"Here is your encoded results: {output_text}") 
+
+caesar(text, shift)
