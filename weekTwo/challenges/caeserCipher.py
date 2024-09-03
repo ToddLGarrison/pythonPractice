@@ -15,15 +15,13 @@ def caesar(original_text, shift_amount):
 
                 shifted_index %= len(alphabet)
                 output_text += alphabet[shifted_index]
-
-            print(f"Here is your encoded results: {output_text}") 
     else:
             for letter in original_text:
                 shifted_index = int(alphabet.index(letter) - shift_amount)
 
-                shifted_index = len(alphabet) % shifted_index
+                shifted_index %= len(alphabet)
                 output_text += alphabet[shifted_index]
 
-            print(f"Here is your encoded results: {output_text}") 
+    print(f"Here is your encoded results: {output_text}") 
 
 caesar(text, shift)
