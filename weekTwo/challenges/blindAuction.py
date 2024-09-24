@@ -1,26 +1,24 @@
 def bid_app():
-    bidder_dictionary = {}
     additional_bidder = False
     
     name = input("What is your name? \n")
-    bid_amount = input("What is your bid amount? \n")
+    price = float(input("What is your bid $? \n"))
 
-    bidder_dictionary = {
-        "name": name,
-        "bid_amount": bid_amount,
-    }
+    bids = {}
+    bids[name] = price
 
-    more_bidder = input("Are there any more bidders? 'Yes' or 'No' \n").lower()
+    more_bidder = input("Are there any more bidders? Type 'yes' or 'no' \n").lower()
     
     if(more_bidder == 'yes'):
         additional_bidder = True
         if(bidder_dictionary == True):
+            print("\n" * 20)
             bid_app()
         else:
             for bidder in bidder_dictionary:
                 highest_bidder = {}
-                if(bidder[bid_amount] > highest_bidder):
-                    highest_bidder = {bidder["name"], bidder["bid_amount"]}
+                if(bidder[price] > highest_bidder):
+                    highest_bidder = {bidder["name"], bidder["price"]}
                 return highest_bidder
     
     print(f"bidder dictionary", bidder_dictionary)
