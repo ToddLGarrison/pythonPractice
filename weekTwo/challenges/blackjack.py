@@ -13,3 +13,12 @@ comp_hand = []
 for _ in range(2):
     player_hand.append(deal_card())
     comp_hand.append(deal_card())
+
+# print(player_hand)
+# print(comp_hand)
+
+def calculate_score(cards):
+    return sum(cards)
+
+# print(calculate_score(player_hand))
+# print(calculate_score(comp_hand))
