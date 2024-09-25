@@ -18,6 +18,22 @@ def calculate_score(cards):
 
     return sum(cards)
 
+def compare(player_score, comp_score):
+    if player_score == comp_score:
+        return "Draw"
+    elif comp_score == 0:
+        return "You lose, Computer has Blackjack"
+    elif player_score == 0:
+        return "You win, you have Blackjack"
+    elif player_score > 21:
+        return "You went over 21. You lose"
+    elif comp_score > 21:
+        return "Computer went over 21. You win"
+    elif player_score > comp_score:
+        return "You win"
+    else:
+        return "You lose"
+
 player_hand = []
 comp_hand = []
 player_score = -1
