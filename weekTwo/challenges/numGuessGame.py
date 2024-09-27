@@ -6,9 +6,9 @@ print("Welcome to the guessing game!")
 print("I am thinking of a number between 1 and 100, can you guess it?")
 
 def guessing_game():
-    easy_or_hard_guesses = input("Choose a difficulty. Type 'easy' or 'hard': ").lower()
+    easy_or_hard = input("Choose a difficulty. Type 'easy' or 'hard': ").lower()
 
-    if easy_or_hard_guesses == 'easy':
+    if easy_or_hard == 'easy':
         guess_counter = 10
     else:
         guess_counter = 5
@@ -22,8 +22,8 @@ def guessing_game():
         elif player_guess > random_number:
             print("Too high")
             guess_counter -= 1
-        elif player_guess == random_number:
-            print("Correct!")
+        else:
+            print(f"Correct! The number was {random_number}")
             return
     if guess_counter == 0:
         print(f"Out of attempts the correct number was {random_number}")
