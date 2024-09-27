@@ -2,6 +2,9 @@ import random
 
 random_number = random.randint(1, 100)
 
+print("Welcome to the guessing game!")
+print("I am thinking of a number between 1 and 100, can you guess it?")
+
 def guessing_game():
     easy_or_hard_guesses = input("Choose a difficulty. Type 'easy' or 'hard': ").lower()
 
