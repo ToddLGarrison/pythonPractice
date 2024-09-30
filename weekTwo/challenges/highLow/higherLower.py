@@ -25,6 +25,8 @@ def game():
 # Get answer input
         guess = input("Who has more followers? 'A' or 'B': ").lower()
 
+        print('\n' * 25)
+
 # Check if user is correct
     # get follower count
     # use if statement to check if user is correct
@@ -37,7 +39,7 @@ def game():
 # keep score
             score += 1
 # give user feedback
-            print(f"You're right! Current score: {score}\n")
+            print(f"You're right! Current score: {score}")
         else:
             game_continue = False
             print(f"Sorry, that's wrong. Final score: {score}")
