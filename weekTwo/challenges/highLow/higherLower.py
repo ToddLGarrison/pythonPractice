@@ -9,12 +9,12 @@ def check_answer(guess, a_followers, b_followers):
 
 def game():
     score = 0
-    more_popular = {}
     game_continue = True
+    b = random.choice(data)
 
     while (game_continue):
 #Generate random account from data
-        a = random.choice(data)
+        a = b
         b = random.choice(data)
         if a == b:
             b = random.choice(data)
@@ -34,14 +34,15 @@ def game():
         is_correct = check_answer(guess, a_follower_count, b_follower_count)
 
         if is_correct:
+# keep score
             score += 1
-            print(f"You're right! Current score: {score}")
+# give user feedback
+            print(f"You're right! Current score: {score}\n")
         else:
+            game_continue = False
             print(f"Sorry, that's wrong. Final score: {score}")
 
-# give user feedback
-
-# keep score
-
 # Make repeatable - option b becomes option a if user correct answer
+
+
 game()
