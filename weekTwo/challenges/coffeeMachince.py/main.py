@@ -1,19 +1,9 @@
 from menu import MENU
 from resources import resources
 
-#Coin operated - .01, .05, .10, .25
-
-#print report - what resources are left
-#check resources are sufficient when drink ordered
-#take coins - calculate change - if not enough refund - if correct or more provide change
-#if drink made resources are deducted
-
 # print(MENU["latte"]["cost"])
-profit = 0
 
-def drink_details(drink_name):
-    drink = MENU[drink_name]["ingredients"]
-    return drink
+profit = 0
 
 def drink_cost(drink_name):
     price = MENU[drink_name]["cost"]
@@ -21,7 +11,7 @@ def drink_cost(drink_name):
 
 def check_resources(drink_ingredients):
     can_make = True
-    for item in resources:
+    for item in drink_ingredients:
         if drink_ingredients[item] >= resources[item]:
             print(f"Sorry there is not enough {item}")
             can_make = False
@@ -59,9 +49,9 @@ while machine_on:
         print(resources)
         print(profit)
     else:
-        print(drink_details(coffee_choice))
-        if check_resources(coffee_choice["ingredients"]):
+        drink = MENU[coffee_choice]
+        if check_resources(drink["ingredients"]):
             payment = process_coins()
-            is_transaction_successful(payment, coffee_choice["cost"])
+            is_transaction_successful(payment, drink["cost"])
 
 
