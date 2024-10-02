@@ -8,6 +8,13 @@ from resources import resources
 #take coins - calculate change - if not enough refund - if correct or more provide change
 #if drink made resources are deducted
 
+def drink_details(drink_name):
+    drink = MENU[drink_name]["ingredients"]
+    water = drink["water"]
+    milk = drink["milk"]
+    coffee = drink["coffee"]
+    return [water,milk,coffee]
+
 coffee_choice = input("What would you like? (espresso/latte/cappuccino): ").lower()
 
 machine_on = True
@@ -18,4 +25,6 @@ if coffee_choice == "off":
 
 if coffee_choice == "report":
     print(resources)
-
+elif coffee_choice == "espresso" or "latte" or "cappuccino":
+    user_drink = drink_details(coffee_choice)
+    print(f"{coffee_choice} - {user_drink}")
