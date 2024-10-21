@@ -1,11 +1,20 @@
-from turtle import Turtle, Screen
+import turtle as t
 import random
 
-timmy_the_turtle = Turtle()
+timmy_the_turtle = t.Turtle()
 timmy_the_turtle.shape("turtle")
 timmy_the_turtle.color("coral")
 timmy_the_turtle.speed("fastest")
-timmy_the_turtle.pensize(15)
+timmy_the_turtle.pensize(5)
+t.colormode(255)
+
+# directions = [0, 90, 180, 270]
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    random_color = (r, g, b)
+    return random_color
 
 # def draw_dash_line(x):
 #     for i in range(x):
@@ -21,8 +30,8 @@ timmy_the_turtle.pensize(15)
 
 # square_turtle(4,5)
 
-colors = ["CornflowerBlue", "DarkGreen", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
-directions = [0, 90, 180, 270]
+# colors = ["CornflowerBlue", "DarkGreen", "DarkOrchid", "IndianRed", "DeepSkyBlue", "LightSeaGreen", "wheat", "SlateGray", "SeaGreen"]
+
 
 # def draw_shapes(num_sides):
 #     angle = 360 / num_sides
@@ -37,11 +46,11 @@ directions = [0, 90, 180, 270]
 
 def random_walk(x):
     for i in range(x):
-        timmy_the_turtle.color(random.choice(colors))
+        timmy_the_turtle.color(random_color())
         timmy_the_turtle.forward(30)
         timmy_the_turtle.setheading(random.choice(directions))
 
 random_walk(100)
 
-screen = Screen()
+screen = t.Screen()
 screen.exitonclick()
