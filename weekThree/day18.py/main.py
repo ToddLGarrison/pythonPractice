@@ -5,7 +5,7 @@ timmy_the_turtle = t.Turtle()
 timmy_the_turtle.shape("turtle")
 timmy_the_turtle.color("coral")
 timmy_the_turtle.speed("fastest")
-timmy_the_turtle.pensize(5)
+# timmy_the_turtle.pensize(5)
 t.colormode(255)
 
 # directions = [0, 90, 180, 270]
@@ -44,13 +44,21 @@ def random_color():
 #     timmy_the_turtle.color(random.choice(colors))
 #     draw_shapes(shape_side)
 
-def random_walk(x):
+# def random_walk(x):
+#     for i in range(x):
+#         timmy_the_turtle.color(random_color())
+#         timmy_the_turtle.forward(30)
+#         timmy_the_turtle.setheading(random.choice(directions))
+
+# random_walk(100)
+
+def spirograph(x):
     for i in range(x):
         timmy_the_turtle.color(random_color())
-        timmy_the_turtle.forward(30)
-        timmy_the_turtle.setheading(random.choice(directions))
+        timmy_the_turtle.circle(100)
+        timmy_the_turtle.setheading(timmy_the_turtle.heading() + 5)
 
-random_walk(100)
+spirograph(100)
 
 screen = t.Screen()
 screen.exitonclick()
