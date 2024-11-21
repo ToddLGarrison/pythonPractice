@@ -13,7 +13,7 @@
 
 import pandas
 
-data = pandas.read_csv("weather_data.csv")
+# data = pandas.read_csv("weather_data.csv")
 
 # print(data["temp"])
 
@@ -31,6 +31,13 @@ data = pandas.read_csv("weather_data.csv")
 # print(data[data.day == "Monday"])
 
 # print(data[data.temp == data.temp.max()])
-monday = data[data.day == "Monday"]
-monday_temp = monday.temp[0] * (9/5) + 32
-print(monday_temp)
+# monday = data[data.day == "Monday"]
+# monday_temp = monday.temp[0] * (9/5) + 32
+# print(monday_temp)
+
+data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+
+grey_squirrels_count = len(data["Primary Fur Color"] == "Gray")
+red_squirrels_count = len(data["Primary Fur Color"] == "Cinnamon")
+black_squirrels_count = data["Age"] == "Black"
+print(black_squirrels_count)
