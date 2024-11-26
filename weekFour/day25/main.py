@@ -35,6 +35,8 @@ import pandas
 # monday_temp = monday.temp[0] * (9/5) + 32
 # print(monday_temp)
 
+import pandas
+
 data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
 
 grey_squirrels_count = len(data["Primary Fur Color"] == "Gray")
