@@ -11,16 +11,18 @@ my_label.pack(side=("left"))
 
 my_label["text"] = "New Text"
 my_label.config(text="New Text")
+# my_label.place(x=150,y=200)
+my_label.grid(column=0, row=1)
 
 def button_clicked():
     new_text = input.get()
     my_label.config(text=new_text)
 
 button = Button(text="Click Me", command=button_clicked)
-button.pack()
+# button.pack()
 
 
 input = Entry(width=10)
-input.pack()
+# input.pack()
 
 window.mainloop()
