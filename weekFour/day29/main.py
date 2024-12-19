@@ -4,6 +4,17 @@ from tkinter import *
 
 # ---------------------------- SAVE PASSWORD ------------------------------- #
 
+def save():
+    website = website_entry.get()
+    email = email_entry.get()
+    password = password_entry.get()
+
+    with open("data.text", "a") as data_file:
+        data_file.write(f"{website} | {email} | {password}\n")
+        website_entry.delete(0, END)
+        password_entry.delete(0, END)
+
+
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
@@ -26,8 +37,10 @@ password_label.grid(row=3, column=0)
 # Entry boxes
 website_entry = Entry(width=39)
 website_entry.grid(row=1, column=1, columnspan=2)
+website_entry.focus()
 email_entry = Entry(width=39)
 email_entry.grid(row=2, column=1, columnspan=2)
+email_entry.insert(0, "dummyemail@mail.com")
 password_entry = Entry(width=22)
 password_entry.grid(row=3, column=1)
 
